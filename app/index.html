@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Телефонна книга</title>
+    <!-- jQuery-->
+    <script src="assets/libs-js/jquery.js"></script>
+    <!-- ↓↓↓ VERSION CONTROL SYSTEM ↓↓↓-->
+    <script>
+      // js із версіями файлів js/css щоразу завантажується новий
+      document.write('\
+        <script src="assets/js/version-control.js?version=' + Date.now() + '"><\/script>\
+      ');
+    </script>
+    <script>
+      // ці файли завантажуються з кешу, або (якщо були зміни) - з нету
+      document.write('\
+        <!-- css-libs -->\
+        <!-- own stylesheet -->\
+        <link rel="stylesheet" type="text/css" href="assets/css/index.css?version=' + v.indexCss + '">\
+      ');
+    </script>
+    <!-- ↑↑↑ /VERSION CONTROL SYSTEM ↑↑↑-->
+  </head>
+  <body>
+    <!-- HEADER-->
+    <!-- /HEADER-->
+    <!-- MAIN SECTION-->
+    <div class="main-wrapper">
+      <main class="main">
+        <!-- ↓↓↓ SECTION 1 () ↓↓↓-->
+        <section id="section1">
+          <div id="addContact" type="button">
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <button id="tmp" style="height:50px">TEMP</button>
+          <div id="myInfoBlock"><span>Мій телефон:</span>
+            <div class="myPhone">+38 (066) 234 94 61</div>
+            <div class="myPhone">+38 (068) 745 37 52</div>
+          </div>
+        </section>
+        <!-- ↑↑↑ /SECTION 1 () ↑↑↑-->
+        <!-- ↓↓↓ SECTION 2 (search) ↓↓↓-->
+        <section id="section2">
+          <div id="search-wrapper">
+            <input id="search-input" type="text" placeholder="Пошук">
+            <div id="search-button"><img src="assets/img/search.png" alt="search.png"></div>
+          </div>
+        </section>
+        <!-- ↑↑↑ /SECTION 2 (search) ↑↑↑-->
+        <!-- ↓↓↓ SECTION 3 (list) ↓↓↓-->
+        <section id="section3">
+          <ul id="list-header-wrapper">
+            <li class="list-header-item list-header-item_active" data-sort="peoples">люди</li>
+            <li class="list-header-item" data-sort="groups">групи</li>
+            <li class="list-header-item" data-sort="companies">установи</li>
+            <li class="list-header-item" data-sort="spec">спец.номери</li>
+            <li class="list-header-item" data-sort="help">допомога</li>
+          </ul>
+          <div id="list"></div>
+        </section>
+        <!-- ↑↑↑ /SECTION 3 (list) ↑↑↑-->
+        <!-- ↓↓↓ SECTION 4 (popups) ↓↓↓-->
+        <section id="section4">
+          <div class="contact-card">
+            <div class="contact-card__close-btn">
+              <div class="line line1"></div>
+              <div class="line line2"></div>
+            </div>
+            <button class="contact-card__menu-btn" type="button"><img class="contact-card__menu-img" src="assets/img/gear-wheel.png" alt="menu img"></button>
+            <div class="contact-card__photo-wrapper"><img class="contact-card__photo" src="assets/img/user.png" alt="contact photo">
+              <button class="contact-card__add-photo-btn" type="button">+ додати фото</button>
+            </div>
+            <div class="contact-card__info-wrapper">
+              <div class="contact-card__short-name"></div>
+              <div class="contact-card__group"></div><span class="contact-card__birthday"></span>
+            </div>
+            <div class="contact-card__more-info-button-wrapper">
+              <button class="contact-card__more-info-button" type="button">
+                <div class="contact-card__more-info-button-arrow"></div>
+              </button>
+            </div>
+            <div class="contact-card__more-info-wrapper">
+              <div class="contact-card__full-name"></div>
+              <div class="contact-card__description"></div>
+              <div class="contact-card__address-wrapper"><img class="contact-card__address-img" src="assets/img/address.png" alt="address">
+                <div class="contact-card__address"></div>
+              </div>
+            </div>
+            <div class="contact-card__phones-wrapper"></div>
+            <div class="contact-card__social-wrapper">
+              <div class="contact-card__social-item" data-socialtype="telegram"><a class="contact-card__social-link" href="#"><img src="assets/img/telegram.png" alt="telegram"></a>
+                <div class="contact-card__social-cover"></div>
+              </div>
+              <div class="contact-card__social-item" data-socialtype="viber"><a class="contact-card__social-link" href="#"><img src="assets/img/viber.png" alt="viber"></a>
+                <div class="contact-card__social-cover"></div>
+              </div>
+              <div class="contact-card__social-item" data-socialtype="whatsapp"><a class="contact-card__social-link" href="#"><img src="assets/img/whatsapp.png" alt="whatsapp"></a>
+                <div class="contact-card__social-cover"></div>
+              </div>
+              <div class="contact-card__social-item" data-socialtype="skype"><a class="contact-card__social-link" href="#"><img src="assets/img/skype.png" alt="skype"></a>
+                <div class="contact-card__social-cover"></div>
+              </div>
+              <div class="contact-card__social-item" data-socialtype="email"><a class="contact-card__social-link" href="#"><img src="assets/img/mail.png" alt="email"></a>
+                <div class="contact-card__social-cover"></div>
+              </div>
+              <div class="contact-card__social-item" data-socialtype="facebook"><a class="contact-card__social-link" href="#"><img src="assets/img/facebook.png" alt="facebook"></a>
+                <div class="contact-card__social-cover"></div>
+              </div>
+              <div class="contact-card__social-item" data-socialtype="instagram"><a class="contact-card__social-link" href="#"><img src="assets/img/instagram.jpg" alt="instagram"></a>
+                <div class="contact-card__social-cover"></div>
+              </div>
+              <div class="contact-card__social-item" data-socialtype="vk"><a class="contact-card__social-link" href="#"><img src="assets/img/vk.png" alt="vk"></a>
+                <div class="contact-card__social-cover"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ↑↑↑ /SECTION 4 (popups) ↑↑↑-->
+      </main>
+    </div>
+    <!-- /MAIN SECTION-->
+    <!-- FOOTER-->
+    <!-- /FOOTER-->
+    <!-- ↓↓↓ VERSION CONTROL SYSTEM ↓↓↓-->
+    <script>
+      // ці файли завантажуються з кешу, або (якщо були зміни) - з нету
+      document.write('\
+        <!-- js-libs -->\
+        <!-- own js -->\
+        <script src="assets/js/dbase.js?version=' + v.dbaseStarJs + '"><\/script>\
+        <script src="assets/js/index.js?version=' + v.indexJs + '"><\/script>\
+      ');
+    </script>
+    <!-- ↑↑↑ /VERSION CONTROL SYSTEM ↑↑↑-->
+    <!-- scripts-->
+    <!-- own js-->
+  </body>
+</html>

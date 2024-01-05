@@ -1,0 +1,100 @@
+.footer {
+  font                      : 16px f;
+}
+
+.footer-section1-wrapper {
+  width                     : 100%;
+  background-color          : #172d3b;
+  .footer-section1 {
+    max-width               : 1130px;
+    margin                  : 0 auto;
+    display                 : flex;
+    justify-content         : center;
+    flex-wrap               : wrap;
+    align-items             : center;
+    padding                 : 10px 15px;
+    img {
+      margin: 10px 0;
+      &:not(:last-of-type) {
+        margin-right        : 10px;
+      }
+    }
+  }
+}
+
+.footer-nav-wrapper {
+  width                     : 100%;
+  background-color          : #254456;
+  padding                   : 20px 0;
+  .footer-nav {
+    max-width               : 1130px;
+    padding                 : 0 15px;
+    margin                  : 0 auto;
+    display                 : grid;
+    grid-template-columns   : repeat(1,1fr);
+    grid-gap                : 12px;
+    &__column-header {
+      color                 : white;
+      border-bottom         : 2px solid #445e6e;
+      text-align            : center;
+      width                 : 100%;
+    }
+    &__link {
+      color                 : #a3b5c0;
+      display               : block;
+      height                : 40px;
+      line-height           : 40px;
+      text-align            : center;
+    }
+  }
+}
+
+.footer-info-wrapper {
+  width                     : 100%;
+  background-color          : #172d3b;
+  .footer-info {
+    max-width               : 1130px;
+    margin                  : 0 auto;
+    color                   : #a4b7c3;
+    padding                 : 20px 15px 0;
+    text-align              : left;
+    p:last-of-type {
+      margin-top            : 20px;
+      padding               : 20px 0;
+      border-top            : 1px solid #254456;
+    }
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .footer-nav-wrapper {
+    .footer-nav {
+      grid-template-columns : repeat(2,1fr);
+      &__column-header {
+        text-align          : left;
+        width               : 90%;
+      }
+      &__link {
+        text-align          : left;
+      }
+    }
+  }
+  .footer-info-wrapper {
+    .footer-info {
+      text-align            : justify;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .footer-section1-wrapper {
+    .footer-section1 {
+      justify-content       : space-between;
+    }
+  }
+  .footer-nav-wrapper {
+    .footer-nav {
+      grid-template-columns : repeat(4,1fr);
+    }
+  }
+}

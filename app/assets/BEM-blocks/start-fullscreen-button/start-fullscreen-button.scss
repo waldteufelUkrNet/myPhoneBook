@@ -1,0 +1,44 @@
+.start-fullscreen-button-wrapper1 {
+  width            : 100vw;
+  height           : 100vh;
+  position         : fixed;
+  z-index          : 9000;
+  top              : 0;
+  left             : 0;
+  background-color : white;
+  display          : flex;
+}
+
+.start-fullscreen-button-wrapper2  {
+  margin           : auto;
+}
+
+.start-fullscreen-button {
+  display          : block;
+  width            : 120px;
+  height           : 40px;
+  margin           : 20px auto;
+  background-color : #18db61;
+  border           : 1px solid #18db61;
+  border-radius    : 6px;
+  font             : 18px consolab;
+  color            : white;
+  &__header {
+    font           : 30px cyrillic;
+    color          : dodgerblue;
+  }
+  &__loader {
+    display        : none;
+    position       : absolute;
+    top            : calc( 50% + 80px );
+    left           : 50%;
+    transform      : translate(-50%,-50%);
+    z-index        : -1;
+    width          : 200px;
+    height         : 200px;
+    margin         : 0 auto;
+    &_active {
+      display      : block;
+    }
+  }
+}

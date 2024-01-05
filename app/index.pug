@@ -1,0 +1,208 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    //- meta(name='description' content="???")
+
+    title Телефонна книга
+    //- link(rel='icon', href='assets/img/XXX.JPG')
+
+    // jQuery
+    script(src='assets/libs-js/jquery.js')
+
+    // ↓↓↓ VERSION CONTROL SYSTEM ↓↓↓
+    script.
+      // js із версіями файлів js/css щоразу завантажується новий
+      document.write('\
+        <script src="assets/js/version-control.js?version=' + Date.now() + '"><\/script>\
+      ');
+    script.
+      // ці файли завантажуються з кешу, або (якщо були зміни) - з нету
+      document.write('\
+        <!-- css-libs -->\
+        <!-- own stylesheet -->\
+        <link rel="stylesheet" type="text/css" href="assets/css/index.css?version=' + v.indexCss + '">\
+      ');
+    // ↑↑↑ /VERSION CONTROL SYSTEM ↑↑↑
+
+  body
+    //- include assets/BEM-blocks/start-fullscreen-button/start-fullscreen-button.pug
+    // HEADER
+    //- include assets/BEM-blocks/header/header.pug
+    // /HEADER
+
+    // MAIN SECTION
+    .main-wrapper
+      main.main
+        // ↓↓↓ SECTION 1 () ↓↓↓
+        section#section1
+          #addContact(type='button')
+            .line
+            .line
+          button#tmp(style="height:50px") TEMP
+          #myInfoBlock
+            span Мій телефон:
+            .myPhone +38 (066) 234 94 61
+            .myPhone +38 (068) 745 37 52
+        // ↑↑↑ /SECTION 1 () ↑↑↑
+
+        // ↓↓↓ SECTION 2 (search) ↓↓↓
+        section#section2
+          #search-wrapper
+            input#search-input(type='text' placeholder='Пошук')
+            #search-button
+              img(src="assets/img/search.png", alt="search.png")
+        // ↑↑↑ /SECTION 2 (search) ↑↑↑
+
+        // ↓↓↓ SECTION 3 (list) ↓↓↓
+        section#section3
+          ul#list-header-wrapper
+            li.list-header-item.list-header-item_active(data-sort="peoples") люди
+            li.list-header-item(data-sort="groups") групи
+            li.list-header-item(data-sort="companies") установи
+            li.list-header-item(data-sort="spec") спец.номери
+            li.list-header-item(data-sort="help") допомога
+          #list
+            //- ЗРАЗОК
+            //- .phone-book-item
+            //-   .phone-book-item__name-wrapper
+            //-     span.phone-book-item__name Вася
+            //-     span.phone-book-item__group назва групи
+            //-   .phone-book-item__phone-wrapper
+            //-     a(href="tel:+380661234567").phone-book-item__phone
+            //-       span +38 (066) 123 45 67
+            //-       img(src="assets/img/vodafone.png", alt="vodafone.png")
+            //-   .phone-book-item__phone-wrapper
+            //-     a(href="tel:+380661234567").phone-book-item__phone
+            //-       span +38 (066) 123 45 67
+            //-       img(src="assets/img/vodafone.png", alt="vodafone.png")
+
+            //- .phone-book-group-header(data-group-name='string') string
+            //- .phone-book-group-wrapper
+
+        // ↑↑↑ /SECTION 3 (list) ↑↑↑
+
+        // ↓↓↓ SECTION 4 (popups) ↓↓↓
+        section#section4
+          .contact-card
+            .contact-card__close-btn
+              .line.line1
+              .line.line2
+            button(type='button').contact-card__menu-btn
+              img.contact-card__menu-img(src="assets/img/gear-wheel.png", alt="menu img")
+
+            .contact-card__photo-wrapper
+              img.contact-card__photo(src="assets/img/user.png", alt="contact photo")
+              button(type='button').contact-card__add-photo-btn + додати фото
+
+            //- .contact-card__add-photo-subpopup
+            //-   .contact-card__add-photo-subpopup-wrapper
+            //-     button(type='button').contact-card__add-photo-subpopup-close-btn x
+            //-     p.contact-card__add-photo-subpopup-info вкажіть шлях до фото
+            //-     input(type="file").contact-card__add-photo-subpopup-input
+            //-     button(type='button').contact-card__add-photo-subpopup-ok додати
+
+            .contact-card__info-wrapper
+              .contact-card__short-name
+              .contact-card__group
+              span.contact-card__birthday
+
+            .contact-card__more-info-button-wrapper
+              button(type='button').contact-card__more-info-button
+                .contact-card__more-info-button-arrow
+
+            .contact-card__more-info-wrapper
+              .contact-card__full-name
+              .contact-card__description
+              .contact-card__address-wrapper
+                img(src="assets/img/address.png", alt="address").contact-card__address-img
+                .contact-card__address
+
+            .contact-card__phones-wrapper
+              //- ЗРАЗОК
+              //- .contact-card__prone-group
+              //-   .contact-card__phone-number +38 (066) 123 45 67
+              //-   img.contact-card__operator(src="assets/img/vodafone.png", alt="vodafone")
+              //-   a(href="tel:#").contact-card__call-button
+              //-     img(src="assets/img/phone.png", alt="phone")
+              //-   .contact-card__phone-note phone note
+              //- .contact-card__prone-group
+              //-   .contact-card__phone-number +38 (066) 123 45 67
+              //-   img.contact-card__operator(src="assets/img/vodafone.png", alt="vodafone")
+              //-   a(href="tel:#").contact-card__call-button
+              //-     img(src="assets/img/phone.png", alt="phone")
+              //-   .contact-card__phone-note phone note
+
+            .contact-card__social-wrapper
+              .contact-card__social-item(data-socialtype='telegram')
+                a(href="#").contact-card__social-link
+                  img(src="assets/img/telegram.png", alt="telegram")
+                .contact-card__social-cover
+              .contact-card__social-item(data-socialtype='viber')
+                a(href="#").contact-card__social-link
+                  img(src="assets/img/viber.png", alt="viber")
+                .contact-card__social-cover
+              .contact-card__social-item(data-socialtype='whatsapp')
+                a(href="#").contact-card__social-link
+                  img(src="assets/img/whatsapp.png", alt="whatsapp")
+                .contact-card__social-cover
+              .contact-card__social-item(data-socialtype='skype')
+                a(href="#").contact-card__social-link
+                  img(src="assets/img/skype.png", alt="skype")
+                .contact-card__social-cover
+              .contact-card__social-item(data-socialtype='email')
+                a(href="#").contact-card__social-link
+                  img(src="assets/img/mail.png", alt="email")
+                .contact-card__social-cover
+              .contact-card__social-item(data-socialtype='facebook')
+                a(href="#").contact-card__social-link
+                  img(src="assets/img/facebook.png", alt="facebook")
+                .contact-card__social-cover
+              .contact-card__social-item(data-socialtype='instagram')
+                a(href="#").contact-card__social-link
+                  img(src="assets/img/instagram.jpg", alt="instagram")
+                .contact-card__social-cover
+              .contact-card__social-item(data-socialtype='vk')
+                a(href="#").contact-card__social-link
+                  img(src="assets/img/vk.png", alt="vk")
+                .contact-card__social-cover
+        // ↑↑↑ /SECTION 4 (popups) ↑↑↑
+
+    // /MAIN SECTION
+
+    //- <a href="tg://resolve?domain=user" title="Написати в Telegram"></a>
+    //- <a href="viber://chat?number=380951712218" title="Написать в Viber"></a>
+    //- <a href="whatsapp://send?phone=send?phone=+380996335321" title="Написать в WhatsApp"></a>
+
+    // FOOTER
+    //- include assets/BEM-blocks/footer/footer.pug
+    // /FOOTER
+    //- p(style='font-family:consola') Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor eius quam, optio temporibus doloremque reprehenderit dolore. Qui rem, accusamus. + (123) 456-78-90
+    //- p(style='font-family:consolab') Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor eius quam, optio temporibus doloremque reprehenderit dolore. Qui rem, accusamus. + (123) 456-78-90
+    //- p(style='font-family:consolai') Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor eius quam, optio temporibus doloremque reprehenderit dolore. Qui rem, accusamus. + (123) 456-78-90
+    //- p(style='font-family:consolaz') Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor eius quam, optio temporibus doloremque reprehenderit dolore. Qui rem, accusamus. + (123) 456-78-90
+
+    //- p(style='font-family:cyrillic') Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor eius quam, optio temporibus doloremque reprehenderit dolore. Qui rem, accusamus. + (123) 456-78-90
+
+    //- p(style='font-family:futura') Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor eius quam, optio temporibus doloremque reprehenderit dolore. Qui rem, accusamus. + (123) 456-78-90
+
+    //- p(style='font-family:gost') Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor eius quam, optio temporibus doloremque reprehenderit dolore. Qui rem, accusamus. + (123) 456-78-90
+    // ↓↓↓ VERSION CONTROL SYSTEM ↓↓↓
+    script.
+      // ці файли завантажуються з кешу, або (якщо були зміни) - з нету
+      document.write('\
+        <!-- js-libs -->\
+        <!-- own js -->\
+        <script src="assets/js/dbase.js?version=' + v.dbaseStarJs + '"><\/script>\
+        <script src="assets/js/index.js?version=' + v.indexJs + '"><\/script>\
+      ');
+    // ↑↑↑ /VERSION CONTROL SYSTEM ↑↑↑
+
+    // scripts
+    //- script(src='assets/libs-js/fontawesome-all.min.js')
+    //- script(src='assets/libs-js/countries.js')
+
+    // own js
+    //- script(src='assets/js/index.js')
+    //- script(src='assets/js/form-registration.js')

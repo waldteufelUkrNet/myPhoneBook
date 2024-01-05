@@ -1,0 +1,702 @@
+@font-face {
+  font-family: consola;
+  src: url(../fonts/consola.ttf);
+}
+
+@font-face {
+  font-family: consolab;
+  src: url(../fonts/consolab.ttf);
+}
+
+@font-face {
+  font-family: consolai;
+  src: url(../fonts/consolai.ttf);
+}
+
+@font-face {
+  font-family: consolaz;
+  src: url(../fonts/consolaz.ttf);
+}
+
+@font-face {
+  font-family: cyrillic;
+  src: url(../fonts/CyrillicOld_Bold.ttf);
+}
+
+@font-face {
+  font-family: futura;
+  src: url(../fonts/FuturaPT-Book.ttf);
+}
+
+@font-face {
+  font-family: gost;
+  src: url(../fonts/GOST_Type_AU.ttf);
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  outline: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a, a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#section1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #eee;
+  padding: 10px;
+}
+
+#section1 #addContact {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid dodgerblue;
+  border-radius: 50%;
+  background-color: dodgerblue;
+  position: relative;
+}
+
+#section1 #addContact .line {
+  width: 25px;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+#section1 #addContact .line:last-of-type {
+  -webkit-transform: translate(-50%) rotate(90deg);
+      -ms-transform: translate(-50%) rotate(90deg);
+          transform: translate(-50%) rotate(90deg);
+}
+
+#section1 #myInfoBlock {
+  width: 50%;
+}
+
+#section1 #myInfoBlock span {
+  font: 14px futura;
+  color: grey;
+  text-decoration: underline;
+}
+
+#section1 #myInfoBlock .myPhone {
+  font: 16px consolab;
+  color: dodgerblue;
+}
+
+#section2 {
+  padding: 10px;
+  background-color: white;
+}
+
+#section2 #search-wrapper {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#section2 #search-wrapper #search-input {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 40px;
+  border: 1px solid grey;
+  border-radius: 6px 0 0 6px;
+  padding: 10px 12px;
+  font: 16px consola;
+}
+
+#section2 #search-wrapper #search-button {
+  height: 40px;
+  padding: 5px 15px;
+  border: 1px solid dodgerblue;
+  border-left: 0px solid transparent;
+  border-radius: 0 6px 6px 0;
+  background-color: dodgerblue;
+}
+
+#section2 #search-wrapper #search-button img {
+  height: 30px;
+}
+
+#section3 {
+  padding: 10px;
+  border-top: 1px solid lightgrey;
+  background-color: white;
+}
+
+#section3 #list-header-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#section3 #list-header-wrapper .list-header-item {
+  border: 1px solid grey;
+  border-bottom: 0px solid transparent;
+  height: 40px;
+  padding: 12px 4px;
+  font: 16px consola;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#section3 #list-header-wrapper .list-header-item:not(:last-of-type) {
+  border-right: 0px solid transparent;
+}
+
+#section3 #list-header-wrapper .list-header-item:first-of-type {
+  border-radius: 4px 0 0 0;
+}
+
+#section3 #list-header-wrapper .list-header-item:last-of-type {
+  border-radius: 0 4px 0 0;
+}
+
+#section3 #list-header-wrapper .list-header-item_active {
+  background-color: #eee;
+  font-family: consolab;
+  text-decoration: underline;
+}
+
+#section3 #list {
+  border: 1px solid grey;
+  padding: 10px;
+  overflow-y: scroll;
+  border-radius: 0 0 4px 4px;
+  position: relative;
+}
+
+#section3 .phone-book-item {
+  border-bottom: 1px dotted lightgrey;
+  padding: 4px 0;
+}
+
+#section3 .phone-book-item__name-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#section3 .phone-book-item__name {
+  font: 18px consolab;
+}
+
+#section3 .phone-book-item__group {
+  text-align: right;
+  font: 16px consolai;
+  color: grey;
+}
+
+#section3 .phone-book-item__phone-wrapper {
+  text-align: right;
+}
+
+#section3 .phone-book-item__phone {
+  font: 24px consola;
+  color: dodgerblue;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#section3 .phone-book-item__phone img {
+  height: 30px;
+  width: 30px;
+  margin-left: 6px;
+}
+
+#section3 .phone-book-group-header {
+  font: 18px consolab;
+  height: 40px;
+  line-height: 40px;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding-left: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#section3 .phone-book-group-wrapper {
+  margin: 3px 0;
+}
+
+#section4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: none;
+}
+
+.contact-card {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  font: 20px consola;
+  color: grey;
+  display: none;
+  position: relative;
+  z-index: 10;
+}
+
+.contact-card_active {
+  display: block;
+}
+
+.contact-card__close-btn {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.contact-card__close-btn .line {
+  height: 2px;
+  width: 100%;
+  background-color: dodgerblue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.contact-card__close-btn .line1 {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+      -ms-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.contact-card__close-btn .line2 {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+      -ms-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.contact-card__menu-btn {
+  height: 40px;
+  width: 40px;
+  margin: 0;
+  padding: 0;
+  border-color: transparent;
+  background-color: white;
+  position: absolute;
+  top: 15px;
+  right: 55px;
+  cursor: pointer;
+}
+
+.contact-card__menu-img {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-card__photo-wrapper {
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  max-width: 512px;
+  max-height: 512px;
+  margin: 0 auto;
+}
+
+.contact-card__photo {
+  max-width: 512px;
+  max-height: 512px;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.contact-card__add-photo-btn {
+  position: absolute;
+  display: none;
+}
+
+.contact-card__add-photo-btn_active {
+  display: block;
+}
+
+.contact-card__add-photo-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 6px;
+  height: 40px;
+  margin: 0;
+  padding: 0 12px;
+  font: 20px consola;
+  color: dodgerblue;
+  cursor: pointer;
+}
+
+.contact-card__info-wrapper {
+  position: relative;
+}
+
+.contact-card__short-name {
+  font-family: consolab;
+  color: black;
+}
+
+.contact-card__birthday {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.contact-card__more-info-button-wrapper {
+  border-top: 1px solid grey;
+  position: relative;
+  margin: 3px 0;
+}
+
+.contact-card__more-info-button-wrapper_active {
+  border-color: dodgerblue;
+}
+
+.contact-card__more-info-button-wrapper_active .contact-card__more-info-button {
+  border-color: dodgerblue;
+}
+
+.contact-card__more-info-button-wrapper_active .contact-card__more-info-button-arrow {
+  border-top-color: dodgerblue;
+}
+
+.contact-card__more-info-button {
+  border: 1px solid lightgrey;
+  background-color: white;
+  border-radius: 4px;
+  margin: 0;
+  padding: 5px;
+  position: absolute;
+  top: -15px;
+  right: 48px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.contact-card__more-info-button::before, .contact-card__more-info-button::after {
+  display: block;
+  content: '';
+  width: 5px;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  top: -1px;
+}
+
+.contact-card__more-info-button::before {
+  left: -5.5px;
+}
+
+.contact-card__more-info-button::after {
+  right: -5.5px;
+}
+
+.contact-card__more-info-button-arrow {
+  border-top: 15px solid lightgrey;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  position: relative;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  -o-transition: transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.contact-card__more-info-wrapper {
+  height: 0;
+  overflow: hidden;
+  padding-top: 10px;
+}
+
+.contact-card__description {
+  font-size: 16px;
+  text-align: justify;
+}
+
+.contact-card__phones-wrapper {
+  margin-top: 10px;
+}
+
+.contact-card__prone-group {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.contact-card__phone-number {
+  color: black;
+  font-family: consolab;
+  white-space: nowrap;
+}
+
+.contact-card__operator {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}
+
+.contact-card__call-button {
+  margin-left: 10px;
+}
+
+.contact-card__call-button img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.contact-card__phone-note {
+  font: 14px consolai;
+  position: absolute;
+  top: 30px;
+  right: 230px;
+}
+
+.contact-card__social-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 15px;
+  width: calc( 100% - 30px);
+}
+
+.contact-card__social-item {
+  width: 40px;
+  height: 40px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
+.contact-card__social-item_active .contact-card__social-cover {
+  display: none;
+}
+
+.contact-card__social-link img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0;
+}
+
+.contact-card__social-cover {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.contact-card__address-wrapper {
+  display: none;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.contact-card__address-wrapper_active {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact-card__address-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.contact-card__address {
+  font: 14px consola;
+}
+
+.contact-card__add-photo-subpopup {
+  border: 1px dotted red;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+}
+
+.contact-card__add-photo-subpopup-wrapper {
+  border: 1px solid dodgerblue;
+  border-radius: 4px;
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+}

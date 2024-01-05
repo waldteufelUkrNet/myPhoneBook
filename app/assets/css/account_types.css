@@ -1,0 +1,127 @@
+.section1 {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.section1__account-types {
+  display: none;
+}
+
+.section1__table {
+  margin-left: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+
+.section1__column {
+  background-color: #f2f2f2;
+  border-bottom: 2px solid grey;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.section1__column > div.section1__column-cell:nth-of-type(2) {
+  font: 18px mpb;
+  position: relative;
+}
+
+.section1__column > div.section1__column-cell:nth-of-type(2)::after {
+  content: 'USD/EUR/GBP';
+  font: 14px mpr;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.section1__column-header {
+  background-color: #6a9a1f;
+  font: 30px mpbc;
+  color: white;
+  min-height: 50px;
+  text-align: center;
+  padding-top: 6px;
+}
+
+.section1__column-cell {
+  font: 14px mpr;
+  padding: 6px 0 6px 6px;
+  min-height: 40px;
+  text-align: center;
+}
+
+.section1__column-cell_empty {
+  display: none;
+}
+
+.section1__learn-more, .section1__open-account {
+  font: 16px mpb;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 38px;
+  display: block;
+  width: 113px;
+  height: 38px;
+  margin: 0 auto;
+}
+
+.section1__learn-more {
+  background-color: #d49d07;
+}
+
+.section1__open-account {
+  background-color: #6c9b21;
+}
+
+.section1__description {
+  font: 14px mpr;
+  padding: 20px 12px;
+}
+
+@media screen and (min-width: 720px) {
+  .section1__table {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .section1__column-cell {
+    min-height: 50px;
+    text-align: left;
+  }
+  .section1__column-cell_empty {
+    display: block;
+  }
+  .section1__column {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+  .section1__column > div.section1__column-cell:nth-of-type(2)::after {
+    left: 12px;
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  .section1__column > div.section1__column-cell:nth-of-type(3),
+  .section1__column > div.section1__column-cell:nth-of-type(6),
+  .section1__column > div.section1__column-cell:nth-of-type(10),
+  .section1__column > div.section1__column-cell:nth-of-type(14),
+  .section1__column > div.section1__column-cell:nth-of-type(15) {
+    min-height: 32px;
+  }
+  .section1__column > div.section1__column-cell:nth-of-type(7),
+  .section1__column > div.section1__column-cell:nth-of-type(8),
+  .section1__column > div.section1__column-cell:nth-of-type(13) {
+    min-height: 65px;
+  }
+  .section1__account-types {
+    display: block;
+    margin-left: 10px;
+  }
+  .section1__column-header {
+    margin-top: 2px;
+    min-height: 120px;
+    padding-top: 40px;
+  }
+}

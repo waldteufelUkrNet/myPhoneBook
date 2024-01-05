@@ -1,0 +1,52 @@
+.start-fullscreen-button-wrapper1 {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9000;
+  top: 0;
+  left: 0;
+  background-color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.start-fullscreen-button-wrapper2 {
+  margin: auto;
+}
+
+.start-fullscreen-button {
+  display: block;
+  width: 120px;
+  height: 40px;
+  margin: 20px auto;
+  background-color: #18db61;
+  border: 1px solid #18db61;
+  border-radius: 6px;
+  font: 18px consolab;
+  color: white;
+}
+
+.start-fullscreen-button__header {
+  font: 30px cyrillic;
+  color: dodgerblue;
+}
+
+.start-fullscreen-button__loader {
+  display: none;
+  position: absolute;
+  top: calc( 50% + 80px);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -1;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.start-fullscreen-button__loader_active {
+  display: block;
+}

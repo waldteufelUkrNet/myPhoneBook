@@ -1,0 +1,60 @@
+// ↓↓↓ BEM-blocks: header (start) ↓↓↓
+
+//- style
+//-   include header.css
+
+.header-wrapper
+  .header
+    a.header__logo-link(href="#"): img(src="assets/img/logo-clear.png", alt="logo")
+    a.header__logo-link(href="#"): img(src="assets/img/logo.png", alt="logo")
+    .header__top-panel
+      .header__language-wrapper
+        .header__language-cover-for-click
+        .header__selected-language-wrapper(data-lang="ru")
+          img(src="assets/img/lang-ru.png", alt="selected lang")
+          img(src="assets/img/caret-down.png", alt="caret down")
+        .header__language-list
+          img(src="assets/img/lang-ru.png", alt="lang-ru" data-lang="ru")
+          img(src="assets/img/lang-en.png", alt="lang-en" data-lang="en")
+      a(href="#").header__restore-pass-link Забыли пароль?
+      form.header__login-form
+        input(type="text" placeholder="e-mail")
+        input(type="password" placeholder="пароль")
+        button(type="button") Войти
+      button.header__registry-btn открыть счет
+    .header__time-wrapper
+      button.header__menu-btn: img(src="assets/img/menu.png", alt="menu.png")
+      span.header__time-month may
+      span.header__time-day 25
+      span.header__time-span ,
+      span.header__time-years 2015
+      span.header__time-hours 13
+      span.header__time-span :
+      span.header__time-minutes 56
+      span.header__time-span :
+      span.header__time-seconds 55
+      span.header__time-span gmt
+    nav.header__nav
+      button.header__nav-close: img(src="assets/img/cross.png", alt="cross.png")
+      ul.header__nav-list
+        li.header__nav-item
+          a.header__nav-link(href="") Trading Platform
+        li.header__nav-item
+          a.header__nav-link(href="") Open Account
+        li.header__nav-item
+          a.header__nav-link(href="") Banking
+        li.header__nav-item
+          a.header__nav-link(href="") Trading Academy
+        li.header__nav-item
+          a.header__nav-link(href="") About Us
+        li.header__nav-item
+          a.header__nav-link(href="") Contact Us
+        li.header__nav-item_small-menu
+          a.header__nav-link(href="") Восстановить пароль
+        li.header__nav-item_small-menu
+          a.header__nav-link(href="") Войти
+
+script
+  include ../minjs/header/header.js
+
+// ↑↑↑ BEM-blocks: header (end) ↑↑↑

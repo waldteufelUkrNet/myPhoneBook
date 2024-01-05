@@ -1,0 +1,376 @@
+.header-wrapper {
+  width                  : 100%;
+  background             : #172d3b;
+}
+.header {
+  height                 : 117px;
+  max-width              : 1100px;
+  margin                 : 0 auto;
+  position               : relative;
+  display                : flex;
+  flex-direction         : column;
+
+  &__logo-link {
+    position             : absolute;
+    z-index              : 2;
+    top                  : 0;
+    left                 : 0;
+    display              : none;
+    &:first-child {
+      display            : inline-block;
+      img {
+        height: 40px;
+        margin: 10px 0 0 10px;
+      }
+    }
+  }
+
+
+  // верхня панелька
+  &__top-panel {
+    height               : 60px;
+    display              : flex;
+    justify-content      : flex-end;
+    align-items          : center;
+    background           : #172d3b;
+    font                 : 16px f;
+    text-transform       : uppercase;
+    & > * {
+      margin-right       : 10px;
+    }
+  }
+  &__language-wrapper {
+    height               : 20px;
+    position             : relative;
+    cursor               : pointer;
+  }
+  &__language-cover-for-click {
+    position             : absolute;
+    top                  : 0;
+    left                 : 0;
+    width                : 100%;
+    height               : 100%;
+    z-index              : 10;
+  }
+  &__selected-language-wrapper {
+    display              : flex;
+    justify-content      : space-between;
+    align-items          : center;
+    img:first-child {
+      height             : 20px;
+      width              : 30px;
+      margin-right       : 6px;
+    }
+    img:last-child {
+      width              : 7px;
+      height             : auto;
+    }
+  }
+  &__language-list {
+    display              : none;
+    width                : 30px;
+    padding-top          : 6px;
+    position             : absolute;
+    z-index              : 4;
+    top                  : 20px;
+    left                 : 0;
+    background-color     : #328aba;
+    &_active {
+      display            : block;
+    }
+    img {
+      height             : 20px;
+      width              : 30px;
+    }
+  }
+  &__restore-pass-link {
+    text-transform       : none;
+    color                : white;
+    transition           : color .3s;
+    display              : none;
+    &:hover {
+      color              : #a3b5c0;
+    }
+  }
+  &__login-form {
+    height               : 27px;
+    display              : none;
+    justify-content      : flex-start;
+    align-items          : center;
+    flex-direction       : column;
+    background-color     : rgba(0,0,0,.8);
+    position             : fixed;
+    top                  : 0px;
+    left                 : 50%;
+    transform            : translate(-50%);
+    width                : 100vw;
+    height               : 100vh;
+    z-index              : 10;
+    padding              : 50px;
+    input {
+      height             : 50px;
+      width              : 250px;
+      border             : 1px solid white;
+      margin             : 0 0 20px 0;
+      background-color   : #061c2a;
+      padding            : 12px 6px;
+      font               : 16px f;
+      color              : white;
+      &::placeholder {
+        font             : 16px f;
+        color            : white;
+        opacity          : 1;
+      }
+    }
+    button {
+      width              : 250px;
+      height             : 50px;
+      margin             : 0;
+      padding            : 0;
+      border             : 1px solid white;
+      text-transform     : none;
+      font               : 16px f;
+      color              : white;
+      background-color   : #061c2a;
+      cursor             : pointer;
+      transition         : background-color .3s;
+      &:hover {
+        background-color : #254456;
+      }
+    }
+  }
+  &__registry-btn {
+    height               : 100%;
+    width                : 146px;
+    margin               : 0;
+    padding              : 0;
+    border               : 1px solid transparent;
+    cursor               : pointer;
+    background-color     : #328aba;
+    color                : white;
+    font                 : 16px f;
+    letter-spacing       : 1px;
+    transition           : background-color .3s;
+    &:hover {
+      background-color   : #254456;
+    }
+  }
+
+  // панелька часу
+  &__time-wrapper {
+    flex-grow            : 1;
+    display              : flex;
+    justify-content      : flex-end;
+    align-items          : flex-end;
+    color                : white;
+    font                 : 16px f;
+    text-transform       : uppercase;
+    padding              :  0 10px 10px 10px;
+    & > * {
+      margin-right       : 2px;
+    }
+  }
+  &__menu-btn {
+    margin-right: auto;
+    height: 40px;
+    width: 40px;
+    border: 1px dotted transparent;
+    background-color: transparent;
+    padding           : 0;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__time-month {}
+  &__time-day {
+    margin-right         : 0px;
+  }
+  &__time-month {}
+  &__time-hours,
+  &__time-minutes,
+  &__time-seconds {
+    font-size            : 26px;
+    line-height          : .9em;
+  }
+  &__time-span {}
+
+  // панелька навігації
+  &__nav {
+    position             : fixed;
+    z-index              : 3;
+    height               : 100vh;
+    background           : #172d3b;
+    width                : 300px;
+    border-right         : 1px solid black;
+    display              : none;
+  }
+  &__nav-close {
+    margin-top: 10px;
+    margin-left: calc( 100% - 30px - 10px );
+    margin-bottom: 20px;
+    padding: 0;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__nav-list {
+    min-height           : 60px;
+    display              : flex;
+    flex-direction       : column;
+    justify-content      : flex-end;
+    align-items          : center;
+    font                 : 16px f;
+    text-transform       : uppercase;
+  }
+  &__nav-link {
+    color                : white;
+    padding              : 0 15px;
+    transition           : color .3s;
+    white-space          : nowrap;
+    display              : inline-block;
+    height               : 40px;
+    &:hover {
+      color              : #a3b5c0;
+    }
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .header {
+    &__time-wrapper {
+      & > * {
+        margin-right       : 6px;
+      }
+    }
+    &__time-day {
+      margin-right         : 0px;
+    }
+    &__menu-btn {
+      margin-right: auto;
+    }
+    &__time-hours,
+    &__time-minutes,
+    &__time-seconds {
+      font-size            : 36px;
+    }
+  }
+
+}
+
+@media screen and (min-width: 800px) {
+  .header {
+    height                 : 177px;
+    &__menu-btn {
+      display              : none;
+    }
+    &__restore-pass-link {
+      display              : block;
+    }
+    &__login-form {
+      display              : flex;
+    }
+    &__nav {
+      position             : relative;
+      z-index              : 3;
+      height               : 60px;
+      width                : 100%;
+      border-right         : none;
+      display              : block;
+    }
+    &__nav-close {
+      display              : none;
+    }
+    &__nav-list {
+      min-height           : 60px;
+      display              : flex;
+      flex-direction       : row;
+      justify-content      : flex-end;
+      align-items          : center;
+      font                 : 16px f;
+      text-transform       : uppercase;
+    }
+    &__nav-link {
+      color                : white;
+      padding              : 0 15px;
+      transition           : color .3s;
+      white-space          : nowrap;
+      display              : inline;
+      height               : auto;
+      &:hover {
+        color              : #a3b5c0;
+      }
+    }
+    &__nav-item_small-menu {
+      display            : none;
+    }
+    &__login-form {
+      display              : flex;
+      justify-content      : space-between;
+      align-items          : center;
+      flex-direction       : row;
+      background-color     : transparent;
+      position             : static;
+      top                  : 0;
+      left                 : 0;
+      transform            : none;
+      width                : auto;
+      height               : 27px;
+      z-index              : 10;
+      padding              : 0px;
+      input {
+        height             : 27px;
+        width              : auto;
+        border             : 1px solid transparent;
+        margin             : 0 10px 0 0;
+        padding            : 1px 6px;
+      }
+      button {
+        width              : 80px;
+        height             : 27px;
+        border             : 1px solid transparent;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .header-wrapper {
+    width                : 100%;
+    background           : #173040 url('../img/header-bg.png') no-repeat center top;
+  }
+  .header {
+    &__logo-link {
+      display: inline-block;
+      &:first-child {
+        display: none;
+      }
+    }
+    &__top-panel {
+      height               : 39px;
+      background           : transparent url('../img/top-panel-bg.png') no-repeat right bottom;
+      & > * {
+        margin-right       : 30px;
+      }
+      button {
+        margin             : 0;
+      }
+    }
+    &__registry-btn {
+      width                : 166px;
+    }
+    &__nav {
+      background-color: transparent;
+    }
+    &__nav-list {
+      background           : transparent url('../img/nav-bg.png') no-repeat right bottom;
+    }
+  }
+}
